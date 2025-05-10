@@ -1,97 +1,108 @@
-import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Breadcrumb from '../components/Breadcrumb';
 
 export default function Services() {
   return (
-    <>
-      <Head>
-        <title>Our Services - Glodinas Flex Work B.V.</title>
-        <meta name="description" content="Discover the staffing, payroll, and housing services offered by Glodinas Flex Work B.V." />
-        <meta name="keywords" content="temporary staffing Netherlands, recruitment agency, payroll services, housing support for workers, Glodinas Flex Work" />
-        <meta name="author" content="Glodinas Flex Work B.V." />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Our Services - Glodinas Flex Work B.V." />
-        <meta property="og:description" content="Discover the staffing, payroll, and housing services offered by Glodinas Flex Work B.V." />
-        <meta property="og:image" content="https://glodinas-flex-site.vercel.app/images/services-hero.jpg" />
-        <meta property="og:url" content="https://glodinas-flex-site.vercel.app/services" />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Services - Glodinas Flex Work B.V." />
-        <meta name="twitter:description" content="Discover the staffing, payroll, and housing services offered by Glodinas Flex Work B.V." />
-        <meta name="twitter:image" content="https://glodinas-flex-site.vercel.app/images/services-hero.jpg" />
-      </Head>
-
+    <main className="text-gray-800">
       {/* Hero Section */}
-      <section
-        className="relative h-[400px] flex items-center justify-center text-white text-center px-4"
-        style={{
-          backgroundImage: "url('/images/services-hero.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+      <motion.section
+        className="bg-white py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
-        <div className="bg-black/40 absolute inset-0 z-0" />
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="text-4xl font-bold mb-2">Our Services</h1>
-          <p className="text-lg">We connect talent with opportunity — reliably and efficiently.</p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-4xl font-bold mb-4 text-gray-900">Onze Diensten</h1>
+          <p className="text-lg text-gray-700">
+            Glodinas Finance B.V. ondersteunt ondernemers met complete boekhouding en loonadministratie. Wij werken met slimme software-integraties zodat u zich kunt richten op ondernemen.
+          </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Breadcrumb */}
-      <div className="max-w-6xl mx-auto px-4 pt-4">
-        <Breadcrumb currentPage="Services" />
+      <div className="max-w-6xl mx-auto px-4 pt-2 pb-4">
+        <Breadcrumb currentPage="Diensten" />
       </div>
 
-      {/* Services Overview */}
-      <section className="py-20 px-4 max-w-6xl mx-auto text-gray-800">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {[
-            {
-              title: 'Temporary Staffing',
-              desc: 'Fast placements for various industries across the Netherlands.',
-              img: '/images/temp-staffing.jpg',
-            },
-            {
-              title: 'Recruitment',
-              desc: 'We match talent to permanent roles with precision and care.',
-              img: '/images/recruitment.jpg',
-            },
-            {
-              title: 'Payroll Services',
-              desc: 'Let us handle contracts, salaries, taxes and compliance.',
-              img: '/images/payroll.jpg',
-            },
-            {
-              title: 'Housing Support',
-              desc: 'We assist international workers with suitable accommodation.',
-              img: '/images/housing.jpg',
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="p-4 border bg-white rounded shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="relative h-56 mb-4 rounded overflow-hidden">
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p>{item.desc}</p>
-            </div>
-          ))}
+      {/* Boekhouding */}
+      <motion.section
+        className="bg-gray-50 py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-10">
+          <Image src="/images/icon-bookkeeping.jpg" alt="Boekhouding" width={120} height={120} />
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3">Boekhouding</h2>
+            <p className="text-gray-700 mb-4">
+              Wij verzorgen uw volledige administratie, inclusief btw-aangiftes, jaarrekeningen en financieel advies. Door de koppeling met <strong>Moneybird</strong> heeft u altijd realtime inzicht in uw cijfers.
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-4">
+              <li>Automatische factuurverwerking</li>
+              <li>Bankkoppelingen en kasstromen</li>
+              <li>Overzichtelijke dashboards en rapportages</li>
+            </ul>
+            <Link href="/contact">
+              <a className="inline-block bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700">
+                Vraag vrijblijvend advies aan
+              </a>
+            </Link>
+          </div>
         </div>
+      </motion.section>
 
-        <div className="text-center mt-12">
-          <a
-            href="/register"
-            className="bg-orange-500 text-white px-6 py-3 rounded font-semibold hover:bg-orange-600"
-          >
-            Register Now
-          </a>
+      {/* Loonadministratie */}
+      <motion.section
+        className="bg-white py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-10">
+          <Image src="/images/icon-payroll.jpg" alt="Loonadministratie" width={120} height={120} />
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3">Loonadministratie</h2>
+            <p className="text-gray-700 mb-4">
+              Een correcte en tijdige verwerking van salarissen is cruciaal. Met <strong>Employes</strong> automatiseren wij uw loonstroken, jaaropgaven en loonaangiftes — inclusief werknemersportaal.
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-4">
+              <li>Online loonstroken voor uw medewerkers</li>
+              <li>Automatische loonaangiftes bij de Belastingdienst</li>
+              <li>HR-koppelingen en documentbeheer</li>
+            </ul>
+            <Link href="/contact">
+              <a className="inline-block bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700">
+                Start met loonverwerking
+              </a>
+            </Link>
+          </div>
         </div>
-      </section>
-    </>
+      </motion.section>
+
+      {/* CTA */}
+      <motion.section
+        className="bg-blue-600 text-white py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Meer weten over onze financiële diensten?</h2>
+          <p className="mb-6 text-lg">Neem vandaag nog contact met ons op voor een persoonlijk gesprek of offerte.</p>
+          <Link href="/contact">
+            <a className="bg-white text-blue-600 px-6 py-3 font-semibold rounded hover:bg-gray-100">
+              Neem contact op
+            </a>
+          </Link>
+        </div>
+      </motion.section>
+    </main>
   );
 }
