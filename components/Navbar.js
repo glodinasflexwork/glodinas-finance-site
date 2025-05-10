@@ -35,6 +35,7 @@ export default function Navbar() {
         <Link href="/about"><a className="text-gray-700 hover:text-orange-500">{t('About Us')}</a></Link>
         <Link href="/services"><a className="text-gray-700 hover:text-orange-500">{t('Services')}</a></Link>
         <Link href="/loans"><a className="text-gray-700 hover:text-orange-500">{t('Loans')}</a></Link>
+        <Link href="/blog"><a className="text-gray-700 hover:text-orange-500">Blog</a></Link>
         <Link href="/contact"><a className="text-gray-700 hover:text-orange-500">{t('Contact')}</a></Link>
 
         {/* Language Switcher */}
@@ -78,7 +79,9 @@ export default function Navbar() {
           <Link href="/about"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('About Us')}</a></Link>
           <Link href="/services"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Services')}</a></Link>
           <Link href="/loans"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Loans')}</a></Link>
+          <Link href="/blog"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">Blog</a></Link>
           <Link href="/contact"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Contact')}</a></Link>
+
           {/* Language Switcher inside Mobile Menu */}
           <select
             value={router.locale}
