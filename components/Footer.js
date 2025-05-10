@@ -7,30 +7,29 @@ export default function Footer() {
 
         {/* Brand & Mission */}
         <div>
-          <img src="/images/logo.png" alt="Glodinas Flex Work" className="h-10 mb-3" />
+          <img src="/images/logo-finance.jpg" alt="Glodinas Finance" className="h-10 mb-3" />
           <p className="text-gray-600 text-sm">
-            Connecting people with opportunities — reliable, multilingual staffing solutions across the Netherlands.
+            Glodinas Finance B.V. biedt boekhouding, loonadministratie en leningsadvies voor particulieren en bedrijven.
           </p>
         </div>
 
         {/* Company */}
         <div>
-          <h4 className="font-semibold mb-2">Company</h4>
+          <h4 className="font-semibold mb-2">Bedrijf</h4>
           <ul className="space-y-1">
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/about">Over Ons</Link></li>
+            <li><Link href="/services">Diensten</Link></li>
+            <li><Link href="/loans">Leningen</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-semibold mb-2">Quick Links</h4>
+          <h4 className="font-semibold mb-2">Links</h4>
           <ul className="space-y-1">
-            <li><Link href="/register">Register</Link></li>
-            <li><Link href="/faq">FAQ</Link></li>
-            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="/terms">Terms & Conditions</Link></li>
+            <li><Link href="/privacy-policy">Privacyverklaring</Link></li>
+            <li><Link href="/terms">Algemene Voorwaarden</Link></li>
           </ul>
         </div>
 
@@ -38,16 +37,16 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-2">Contact</h4>
           <ul className="space-y-1">
-            <li>Glodinas Flex Work B.V.</li>
-            <li><a href="mailto:info@glodinas.nl">info@glodinas.nl</a></li>
+            <li>Glodinas Finance B.V.</li>
+            <li><a href="mailto:info@glodinasfinance.nl">info@glodinasfinance.nl</a></li>
             <li>+31 6 45 83 37 89</li>
-            <li>Chamber of Commerce: 300077503</li>
+            <li>KvK: 300077503</li>
           </ul>
         </div>
       </div>
 
       <div className="mt-10 text-center text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Glodinas Flex Work B.V. All rights reserved.
+        &copy; {new Date().getFullYear()} Glodinas Finance B.V. Alle rechten voorbehouden.
       </div>
     </footer>
   );
