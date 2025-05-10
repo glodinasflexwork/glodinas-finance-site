@@ -11,8 +11,8 @@ export default function Navbar() {
 
   const changeLanguage = (e) => {
     const newLocale = e.target.value;
-    i18n.changeLanguage(newLocale); // Update i18n
-    router.push(router.pathname, router.asPath, { locale: newLocale }); // Update URL
+    i18n.changeLanguage(newLocale);
+    router.push(router.pathname, router.asPath, { locale: newLocale });
   };
 
   const toggleMenu = () => {
@@ -24,31 +24,18 @@ export default function Navbar() {
       {/* Logo */}
       <Link href="/">
         <a className="flex items-center space-x-3">
-          <Image src="/images/logo.png" alt="Glodinas Flex Work B.V." width={150} height={50} priority />
-          <span className="text-xl font-bold hidden sm:inline">Glodinas Flex Work B.V.</span>
+          <Image src="/images/logo-finance.png" alt="Glodinas Finance B.V." width={150} height={50} priority />
+          <span className="text-xl font-bold hidden sm:inline">Glodinas Finance B.V.</span>
         </a>
       </Link>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-6">
-        <Link href="/">
-          <a className="text-gray-700 hover:text-orange-500">{t('Home')}</a>
-        </Link>
-        <Link href="/about">
-          <a className="text-gray-700 hover:text-orange-500">{t('About Us')}</a>
-        </Link>
-        <Link href="/industries">
-          <a className="text-gray-700 hover:text-orange-500">{t('Industries')}</a>
-        </Link>
-        <Link href="/job-seekers">
-          <a className="text-gray-700 hover:text-orange-500">{t('Job Seekers')}</a>
-        </Link>
-        <Link href="/employers">
-          <a className="text-gray-700 hover:text-orange-500">{t('Employers')}</a>
-        </Link>
-        <Link href="/contact">
-          <a className="text-gray-700 hover:text-orange-500">{t('Contact')}</a>
-        </Link>
+        <Link href="/"><a className="text-gray-700 hover:text-orange-500">{t('Home')}</a></Link>
+        <Link href="/about"><a className="text-gray-700 hover:text-orange-500">{t('About Us')}</a></Link>
+        <Link href="/services"><a className="text-gray-700 hover:text-orange-500">{t('Services')}</a></Link>
+        <Link href="/loans"><a className="text-gray-700 hover:text-orange-500">{t('Loans')}</a></Link>
+        <Link href="/contact"><a className="text-gray-700 hover:text-orange-500">{t('Contact')}</a></Link>
 
         {/* Language Switcher */}
         <select
@@ -87,24 +74,11 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-16 right-6 bg-white shadow-lg rounded-lg p-6 w-64 z-50 flex flex-col space-y-4">
-          <Link href="/">
-            <a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Home')}</a>
-          </Link>
-          <Link href="/about">
-            <a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('About Us')}</a>
-          </Link>
-          <Link href="/industries">
-            <a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Industries')}</a>
-          </Link>
-          <Link href="/job-seekers">
-            <a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Job Seekers')}</a>
-          </Link>
-          <Link href="/employers">
-            <a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Employers')}</a>
-          </Link>
-          <Link href="/contact">
-            <a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Contact')}</a>
-          </Link>
+          <Link href="/"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Home')}</a></Link>
+          <Link href="/about"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('About Us')}</a></Link>
+          <Link href="/services"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Services')}</a></Link>
+          <Link href="/loans"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Loans')}</a></Link>
+          <Link href="/contact"><a onClick={toggleMenu} className="text-gray-700 hover:text-orange-500">{t('Contact')}</a></Link>
           {/* Language Switcher inside Mobile Menu */}
           <select
             value={router.locale}
