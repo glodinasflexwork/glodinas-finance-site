@@ -1,12 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
     <main className="text-gray-800">
       {/* Hero Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
+      <motion.section
+        className="bg-white py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               Uw financiële partner voor boekhouding,<br className="hidden md:block" />
@@ -29,15 +36,21 @@ export default function Home() {
               alt="Financieel overzicht"
               width={600}
               height={400}
-              className="rounded-lg shadow"
+              className="rounded-lg shadow w-full h-auto"
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Bookkeeping Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+      <motion.section
+        className="bg-gray-50 py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-8">
           <Image src="/images/icon-bookkeeping.jpg" alt="Boekhouding" width={80} height={80} />
           <div>
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">Boekhouding</h2>
@@ -49,11 +62,17 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Payroll Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+      <motion.section
+        className="bg-white py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-8">
           <Image src="/images/icon-payroll.jpg" alt="Loonadministratie" width={80} height={80} />
           <div>
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">Loonadministratie</h2>
@@ -65,11 +84,17 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Loan Advisory Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+      <motion.section
+        className="bg-gray-50 py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-8">
           <Image src="/images/icon-loans.jpg" alt="Financieringsadvies" width={80} height={80} />
           <div>
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">Financieringsadvies</h2>
@@ -81,11 +106,17 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Partner Logos */}
-      <section className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-4">
+      <motion.section
+        className="bg-white py-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-xl font-semibold text-gray-900 text-center mb-8">Onze partners</h2>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {[
@@ -100,11 +131,17 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Choose Us */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+      <motion.section
+        className="bg-white py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-10">Waarom kiezen voor Glodinas Finance?</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-left">
             {[
@@ -132,10 +169,16 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Final Call to Action */}
-      <section className="bg-blue-600 text-white py-16">
+      <motion.section
+        className="bg-blue-600 text-white py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Klaar voor een financieel gezonde toekomst?</h2>
           <p className="text-lg mb-6">Neem vandaag nog contact op voor vrijblijvend advies of een offerte.</p>
@@ -145,7 +188,7 @@ export default function Home() {
             </a>
           </Link>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }
