@@ -24,7 +24,7 @@ export default function Navbar() {
       {/* Logo */}
       <Link href="/">
         <a className="flex items-center space-x-3">
-          <Image src="/images/logo-finance.png" alt="Glodinas Finance B.V." width={150} height={50} priority />
+          <Image src="/images/logo-finance.jpg" alt="Glodinas Finance B.V." width={150} height={50} priority />
           <span className="text-xl font-bold hidden sm:inline">Glodinas Finance B.V.</span>
         </a>
       </Link>
