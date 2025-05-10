@@ -101,6 +101,51 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <section className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-10">Waarom kiezen voor Glodinas Finance?</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-left">
+            {[
+              {
+                title: "Digitale boekhouding",
+                text: "Automatische koppelingen met Moneybird besparen u tijd en fouten.",
+              },
+              {
+                title: "Salaris zonder zorgen",
+                text: "Met Employes zorgen wij voor tijdige, foutloze loonverwerking.",
+              },
+              {
+                title: "Onafhankelijk advies",
+                text: "Vergelijk hypotheken en zakelijke leningen met betrouwbare partners.",
+              },
+              {
+                title: "Persoonlijke service",
+                text: "Altijd een vast aanspreekpunt voor vragen en begeleiding.",
+              },
+            ].map(({ title, text }, i) => (
+              <div key={i} className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-md transition">
+                <h3 className="text-xl font-semibold mb-2 text-blue-700">{title}</h3>
+                <p className="text-sm text-gray-700">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final Call to Action */}
+      <section className="bg-blue-600 text-white py-16">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Klaar voor een financieel gezonde toekomst?</h2>
+          <p className="text-lg mb-6">Neem vandaag nog contact op voor vrijblijvend advies of een offerte.</p>
+          <Link href="/contact">
+            <a className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100">
+              Contact opnemen
+            </a>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
