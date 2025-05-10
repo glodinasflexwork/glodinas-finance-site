@@ -1,73 +1,92 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Glodinas Finance B.V. – Uw financiële partner</title>
-        <meta
-          name="description"
-          content="Glodinas Finance B.V. biedt boekhouding, loonadministratie en leningsadvies met partners als Moneybird, Employes, ING, ABN AMRO en SNS."
-        />
-        <link rel="canonical" href="https://glodinasfinance.nl/" />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://glodinasfinance.nl/" />
-        <meta property="og:title" content="Glodinas Finance B.V. – Uw financiële partner" />
-        <meta
-          property="og:description"
-          content="Volledige boekhouding, loonadministratie en leningsadvies op maat met top partners."
-        />
-        <meta property="og:image" content="/images/hero.jpg" />
-      </Head>
-
+    <main className="text-gray-800">
       {/* Hero Section */}
-      <section
-        className="relative h-[500px] flex items-center justify-center text-white text-center px-4"
-        style={{
-          backgroundImage: "url('/images/hero.jpg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="bg-black/40 absolute inset-0 z-0" />
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="text-5xl font-bold mb-4">Uw partner in financiën</h1>
-          <p className="mb-6 text-lg">
-            Boekhouding, loonadministratie en leningsadvies onder één dak.
-          </p>
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Uw financiële partner voor boekhouding,<br className="hidden md:block" /> 
+              loonadministratie en financieringsadvies
+            </h1>
+            <p className="text-lg text-gray-700 mb-6">
+              Glodinas Finance B.V. biedt ondernemers professionele boekhouding, 
+              betrouwbare loonadministratie en deskundig advies bij zakelijke leningen. 
+              Ontdek hoe wij uw financiële processen kunnen vereenvoudigen.
+            </p>
+            <Link href="/services">
+              <a className="inline-block bg-blue-600 text-white px-5 py-3 rounded-md shadow hover:bg-blue-700">
+                Bekijk diensten
+              </a>
+            </Link>
+          </div>
+          <div className="md:w-1/2 mt-8 md:mt-0 md:pl-8">
+            <img 
+              src="/images/hero.jpg" 
+              alt="Financieel overzicht" 
+              className="w-full h-auto rounded-lg shadow" 
+            />
+          </div>
         </div>
       </section>
 
-      {/* Partner Logos */}
-      <section className="py-20 bg-white text-center px-4">
-        <h2 className="text-3xl font-bold mb-6">Onze Partners & Integraties</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center justify-center max-w-6xl mx-auto">
-          {[
-            { src: '/images/moneybird.jpg', alt: 'Moneybird' },
-            { src: '/images/employes.jpg', alt: 'Employes' },
-            { src: '/images/firm24.jpg', alt: 'Firm24' },
-            { src: '/images/ing.jpg', alt: 'ING' },
-            { src: '/images/abn-amro.jpg', alt: 'ABN AMRO' },
-            { src: '/images/sns.jpg', alt: 'SNS' },
-          ].map(({ src, alt }, i) => (
-            <div
-              key={i}
-              className="p-2 bg-gray-50 rounded shadow hover:shadow-md transition duration-300"
-            >
-              <Image
-                src={src}
-                alt={alt}
-                width={200}
-                height={130}
-                className="rounded"
-              />
-            </div>
-          ))}
+      {/* Bookkeeping Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Boekhouding</h2>
+          <p className="text-gray-700 mb-4">
+            Wij verzorgen uw boekhouding met een naadloze integratie in Moneybird. 
+            Zo is uw financiële administratie altijd up-to-date en inzichtelijk.
+          </p>
+          <Link href="/services">
+            <a className="text-blue-600 hover:underline font-semibold">Lees meer</a>
+          </Link>
         </div>
       </section>
-    </>
+
+      {/* Payroll Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Loonadministratie</h2>
+          <p className="text-gray-700 mb-4">
+            Loonadministratie zonder zorgen. Met Employes zorgen wij voor een foutloze en 
+            tijdige verwerking van salarissen.
+          </p>
+          <Link href="/services">
+            <a className="text-blue-600 hover:underline font-semibold">Lees meer</a>
+          </Link>
+        </div>
+      </section>
+
+      {/* Loan Advisory Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Financieringsadvies</h2>
+          <p className="text-gray-700 mb-4">
+            Financieringsadvies op maat. Wij ondersteunen bij zakelijke leningen in samenwerking 
+            met ING, ABN AMRO en SNS.
+          </p>
+          <Link href="/loans">
+            <a className="text-blue-600 hover:underline font-semibold">Lees meer</a>
+          </Link>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="bg-white py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-xl font-semibold text-gray-900 text-center mb-8">Onze partners</h2>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <img src="/images/moneybird.png" alt="Moneybird" className="h-12" />
+            <img src="/images/employes.png" alt="Employes" className="h-12" />
+            <img src="/images/ing.png" alt="ING" className="h-12" />
+            <img src="/images/abn.png" alt="ABN AMRO" className="h-12" />
+            <img src="/images/sns.png" alt="SNS Bank" className="h-12" />
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
